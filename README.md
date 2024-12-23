@@ -2,9 +2,9 @@
 
 An online examination system designed to facilitate tests and quizzes for educational institutions. This system allows teachers to create and manage exams, and students to take them. The platform includes user roles for students and faculties with different access levels.
 
-## Project Status: In Progress
+## Project Status: Completed
 
-🚧 **This project is currently under development and is not yet complete.** 🚧
+ **This project has been completed.** 
 
 ## Features
 
