@@ -1,105 +1,85 @@
 # Online Examination System
 
-An online examination system designed to facilitate tests and quizzes for educational institutions. This system allows teachers to create and manage exams, and students to take them. The platform includes user roles for students and faculties with different access levels.
-
-## Project Status: Completed
-
- **This project has been completed.** 
+A Java web application for creating, delivering, and grading online examinations. The project provides separate student and faculty experiences, reusable question banks, timed assessments, automated grading, and performance reporting.
 
 ## Features
 
-- **User Authentication**: Secure login for students and faculties.
-- **Test Creation**: Faculties can create and manage tests with various question types.
-- **Automated Grading**: Automatic grading of exams and quizzes.
-- **Real-Time Statistics**: View real-time stats on student performance.
-- **Customizable Exams**: Create public and private exams with customizable settings.
-- **Question Banks**: Reuse content and randomize questions from a question bank.
+### Faculty workflow
 
-## Technology Stack
+- Create and manage examinations
+- Build reusable question banks
+- Configure public or private assessments
+- Set examination timers and availability rules
+- Randomise questions
+- Review student attempts and performance statistics
 
-- **Backend**: Java Servlets, JSP
-- **Database**: Microsoft SQL Server
-- **Frontend**: HTML, CSS, JavaScript
+### Student workflow
 
-## Installation
+- Sign in with an institutional account
+- View available assessments
+- Complete timed examinations
+- Receive automatically calculated results
+- Review examination history and performance information
 
-1. **Clone the Repository**:
+## Technology
 
-    ```bash
-    git clone https://github.com/COSYBANANA63/online-examination-system.git
-    cd online-examination-system
-    ```
+- Java EE / Jakarta-style Servlets
+- JSP
+- HTML, CSS, and JavaScript
+- Microsoft SQL Server
+- Apache Tomcat
+- Ant / NetBeans project structure
 
-2. **Setup Database**:
+## Local setup
 
-    Ensure you have Microsoft SQL Server installed and running. Create a database named `ExamPortal` and configure the connection settings in the `ResgistrationServlet` `LoginServlet`.
+### Prerequisites
 
-3. **Build and Deploy**:
+- JDK 8 or later
+- Apache Tomcat or another compatible servlet container
+- Microsoft SQL Server
+- Microsoft JDBC Driver for SQL Server
+- Ant or NetBeans
 
-    - Import the project into your IDE (e.g., NetBeans, IntelliJ IDEA. Eclipse).
-    - Configure the web server (e.g., Apache Tomcat) and deploy the application.
+### Installation
 
-4. **Configuration**:
+1. Clone the repository:
 
-    Update the database connection settings in the `RegistrationServlet` & `LoginServlet` and other relevant classes if necessary.
+   ```bash
+   git clone https://github.com/ICARUSTUDIO/Online-Examination-System.git
+   cd Online-Examination-System
+   ```
 
-## Usage
+2. Create a SQL Server database named `ExamPortal`.
 
-1. **Running the Application**:
+3. Configure the database connection used by the application. For a production-quality deployment, move connection values out of servlet source code and load them from environment variables or server-managed configuration.
 
-    Start your web server and navigate to `http://localhost:8080/online-examination-system/Login.jsp` to access the login page.
+4. Add the Microsoft SQL Server JDBC driver to the project or servlet container.
 
-2.**Registration**:
+5. Build and deploy the `ExamPlatform` application to Tomcat.
 
--    Registration is meant to be handled by the people incharge of registering new students and or faculties and will be isolated from the login form in later updates. This will be done to prevent others from casually entering the registration page and then registering themselves into the system.
-    
-3. **Login**:
+6. Open the application at a URL similar to:
 
-    - **Students**: Use email or userId and password to log in.
-    - **Faculties**: Use email or userId and password to log in.
+   ```text
+   http://localhost:8080/ExamPlatform/Login.jsp
+   ```
 
-4. **Access Dashboards**:
+## Roles
 
-    - **Student Dashboard**: After successful login, students are redirected to `StudentDashboard.jsp`.
-    - **Faculty Dashboard**: After successful login, faculties are redirected to `FacultyDashboard.jsp`.
+- **Student:** takes examinations and views results.
+- **Faculty:** creates assessments, manages questions, and reviews performance.
 
-## MSSQL FIXES
-1.    If getting error such as (this driver is not configured for "integratedSecurity") please make sure you download the latest version of the MSSQL JAR Drivers from `https://learn.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16`.Extract its contents into Program Files. Then select the JAR file suitable for your JDK version and add it to your Project Libraries. in the auth folder of the MSSQL JDBC Extract copy the authentication dll and past it in you JDK bin folder, and ensure that it is specified in your System Path.
-2.    To add to System Path copy the directory where the auth.dll is located e.g "C:\Program Files\sqljdbc_12.8\enu\auth\x64\mssql-jdbc_auth-12.8.0.x64.dll" Open your search bar and search for Environment Variables, click on the "Environment Variables button at the buttom and in the new dialogue boc look for path(click on path and then click new then paste the directory in it click Ok then close); might need to restart pc.
+Registration is intended to be controlled by authorised staff rather than exposed as unrestricted public self-registration.
 
-## Contributing
+## Repository notes
 
-Contributions are welcome! If you have suggestions or improvements, please follow these steps:
+This project uses an older Java web stack to demonstrate servlet routing, JSP rendering, role-based application flows, SQL Server integration, session handling, and automated assessment logic. It is presented as a portfolio and learning project rather than a production examination platform.
 
-1. **Fork the Repository**: Create a personal copy of the repository by forking it.
-2. **Clone Your Fork**:
-
-    ```bash
-    git clone https://github.com/COSYBANANA63/online-examination-system.git
-    ```
-
-3. **Create a New Branch**:
-In Process
-    ```bash
-    git checkout -b feature/your-feature
-    ```
-
-4. **Make Changes**: Implement your changes or features.
-5. **Commit and Push**:
-In Process
-    ```bash
-    git add .
-    git commit -m "Add new feature or fix"
-    git push origin feature/your-feature
-    ```
-
-6. **Create a Pull Request**: Submit a pull request with a clear description of your changes.
+Before production use, add centralised configuration, password hashing with a current adaptive algorithm, CSRF protection, stricter authorisation checks, automated tests, audit logging, and a clean build pipeline.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is available under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or feedback, please contact [tobyfemi55@gmail.com](mailto:tobyfemi55@gmail.com).
-
+Oluwatobi Obafemi — [tobyfemi55@gmail.com](mailto:tobyfemi55@gmail.com)
