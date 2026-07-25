@@ -1,0 +1,22 @@
+# Java and Ant build output
+*.class
+build/
+dist/
+**/build/
+**/dist/
+
+# NetBeans user-specific files
+**/nbproject/private/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs and local configuration
+*.log
+.env
+.env.*
+*.local
